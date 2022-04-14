@@ -1,0 +1,11 @@
+div {
+  position: static;
+  top: 100px;
+  right: 300px;
+}
+
+input {
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+}

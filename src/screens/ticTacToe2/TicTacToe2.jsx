@@ -8,7 +8,7 @@ const TicTacToe2 = () => {
   return (
     <>
       <div className={"table"}>
-        <XPieces />
+        <XPieces>X</XPieces>
         <Table />
         <CirclePieces />
       </div>

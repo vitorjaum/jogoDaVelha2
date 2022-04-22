@@ -1,8 +1,7 @@
 import React from "react";
-// import "./XPieces.css";
-import { currentValue } from "../../constants/currentMoves";
+import { useState } from "react/cjs/react.development";
 
-// const styles = ["", "btn-one", "btn-two", "btn-three", "btn-four"];
+import { currentValue } from "../../constants/currentMoves";
 
 const btnBig = { fontSize: "25px" };
 const btnMedium = { fontSize: "15px" };
@@ -10,7 +9,7 @@ const btnSmall = { fontSize: "10px" };
 
 const styles = ["", btnSmall, btnSmall, btnMedium, btnBig];
 
-const PieceButton = ({ size }) => {
+const PieceButton = ({ size, children }) => {
   const setPiece = () => {
     currentValue[0] = { type: "X", size };
     console.log(currentValue);
@@ -18,21 +17,21 @@ const PieceButton = ({ size }) => {
 
   return (
     <>
-      <button onClick={setPiece} style={styles[size]}>
-        X
+      <button onClick={setPiece} style={styles[size]} className={"XPieceBtn"}>
+        {children}
       </button>
     </>
   );
 };
 
-const XPieces = () => {
+const XPieces = ({ children }) => {
   return (
     <>
       <div>
-        <PieceButton size={4} />
-        <PieceButton size={3} />
-        <PieceButton size={2} />
-        <PieceButton size={1} />
+        <PieceButton size={4}>{children}</PieceButton>
+        <PieceButton size={3}>{children}</PieceButton>
+        <PieceButton size={2}>{children}</PieceButton>
+        <PieceButton size={1}>{children}</PieceButton>
       </div>
     </>
   );

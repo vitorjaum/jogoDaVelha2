@@ -25,12 +25,13 @@ const Square = ({ position }) => {
 
   const play = () => {
     console.log(currentPieces[position]);
+    console.log({ currentPieces });
 
     if (
       currentPieces[position] == undefined ||
       currentPieces[position]?.size < currentValue[0]?.size
     ) {
-      console.log(currentValue);
+      console.log({ currentValue });
       setInt(currentValue[0]?.type);
       setStl({ fontSize: pieceSize[currentValue[0].size] });
       currentPieces[position] = currentValue[0];
@@ -49,7 +50,15 @@ const Square = ({ position }) => {
     }
   };
 
-  return <input type={"button"} value={int} style={stl} onClick={play} />;
+  return (
+    <input
+      type={"button"}
+      value={int}
+      style={stl}
+      onClick={play}
+      className={"square"}
+    />
+  );
 };
 
 export default Square;

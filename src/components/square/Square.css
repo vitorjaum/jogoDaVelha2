@@ -1,7 +1,33 @@
 .square {
-  background-color: red;
+  background-color: transparent;
+  border-style: solid;
+  border-color: black;
 }
 
-.square:enabled {
-  background-color: yellowgreen;
+#square-0 {
+  border-width: 0 3px 3px 0;
+}
+#square-1 {
+  border-width: 0 3px 3px;
+}
+#square-2 {
+  border-width: 0 0 3px 3px;
+}
+#square-3 {
+  border-width: 3px 3px 3px 0;
+}
+#square-4 {
+  border-width: 3px;
+}
+#square-5 {
+  border-width: 3px 0 3px 3px;
+}
+#square-6 {
+  border-width: 3px 3px 0 0;
+}
+#square-7 {
+  border-width: 3px 3px 0 3px;
+}
+#square-8 {
+  border-width: 3px 0 0 3px;
 }

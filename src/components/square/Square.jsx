@@ -17,11 +17,11 @@ const possibilities = [
   [2, 4, 6],
 ];
 
-const pieceSize = [0, 10, 10, 15, 25];
+const pieceSize = [0, 12, 12, 20, 30];
 
 const Square = ({ position }) => {
   const [int, setInt] = useState("");
-  const [stl, setStl] = useState({ backgroundColor: "red" });
+  const [stl, setStl] = useState({});
 
   const play = () => {
     console.log(currentPieces[position]);
@@ -57,6 +57,7 @@ const Square = ({ position }) => {
       style={stl}
       onClick={play}
       className={"square"}
+      id={`square-${position}`}
     />
   );
 };

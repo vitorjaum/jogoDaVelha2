@@ -3,6 +3,7 @@ import "./Square.css";
 import currentSquares, {
   currentPieces,
   currentValue,
+  piecesUsed,
 } from "../../constants/currentMoves.js";
 import { useState } from "react/cjs/react.development";
 
@@ -17,25 +18,31 @@ const possibilities = [
   [2, 4, 6],
 ];
 
-const pieceSize = [0, 12, 12, 20, 30];
+const pieceSizeStl = [0, 12, 12, 20, 30];
 
 const Square = ({ position }) => {
   const [int, setInt] = useState("");
   const [stl, setStl] = useState({});
 
   const play = () => {
-    console.log(currentPieces[position]);
     console.log({ currentPieces });
+    console.log(piecesUsed);
+    const currValue = currentValue[0];
+    const pieceType = currValue.type;
+    const pieceSize = currValue.size;
+    const pieceBtn = document.getElementById(`XPieceBtn-${pieceSize}`);
 
     if (
       currentPieces[position] == undefined ||
-      currentPieces[position]?.size < currentValue[0]?.size
+      currentPieces[position]?.size < pieceSize
     ) {
       console.log({ currentValue });
-      setInt(currentValue[0]?.type);
-      setStl({ fontSize: pieceSize[currentValue[0].size] });
-      currentPieces[position] = currentValue[0];
-      currentSquares[position] = currentValue[0]?.type;
+      setInt(pieceType);
+      setStl({ fontSize: pieceSizeStl[pieceSize] });
+      currentPieces[position] = currValue;
+      currentSquares[position] = pieceType;
+      piecesUsed[pieceType][pieceSize] = pieceSize;
+      document.getElementById(`XPieceBtn-${pieceSize}`).style.display = "none";
 
       possibilities.map((move) => {
         if (currentSquares[move[0]] != "") {
@@ -43,7 +50,7 @@ const Square = ({ position }) => {
             currentSquares[move[0]] == currentSquares[move[1]] &&
             currentSquares[move[1]] == currentSquares[move[2]]
           ) {
-            alert(`${currentValue[0].type} ganhou`);
+            alert(`${pieceType} ganhou`);
           }
         }
       });

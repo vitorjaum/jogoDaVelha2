@@ -1,0 +1,24 @@
+.XPieceBtn:after {
+  transform: scale(1.5);
+}
+
+.XPieceBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.XPieceBtn:hover {
+  transform: scale(1.5);
+}
+#XPieceBtn-4 {
+  font-size: 40px;
+}
+#XPieceBtn-3 {
+  font-size: 25px;
+}
+#XPieceBtn-2 {
+  font-size: 17px;
+}
+#XPieceBtn-1 {
+  font-size: 17px;
+}

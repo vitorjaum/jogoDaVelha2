@@ -2,9 +2,24 @@ import React from "react";
 // import "./CirclePieces.css";
 import { currentValue } from "../../constants/currentMoves";
 
-const btnBig = { fontSize: "25px" };
-const btnMedium = { fontSize: "15px" };
-const btnSmall = { fontSize: "10px" };
+const btnBig = {
+  fontSize: "40px",
+  backgroundColor: "transparent",
+  border: "none",
+  cursor: "pointer",
+};
+const btnMedium = {
+  fontSize: "25px",
+  backgroundColor: "transparent",
+  border: "none",
+  cursor: "pointer",
+};
+const btnSmall = {
+  fontSize: "17px",
+  backgroundColor: "transparent",
+  border: "none",
+  cursor: "pointer",
+};
 
 const styles = ["", btnSmall, btnSmall, btnMedium, btnBig];
 

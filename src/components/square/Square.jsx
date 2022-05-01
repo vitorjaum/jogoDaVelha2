@@ -30,7 +30,6 @@ const Square = ({ position }) => {
     const currValue = currentValue[0];
     const pieceType = currValue.type;
     const pieceSize = currValue.size;
-    const pieceBtn = document.getElementById(`XPieceBtn-${pieceSize}`);
 
     if (
       currentPieces[position] == undefined ||
@@ -42,7 +41,11 @@ const Square = ({ position }) => {
       currentPieces[position] = currValue;
       currentSquares[position] = pieceType;
       piecesUsed[pieceType][pieceSize] = pieceSize;
-      document.getElementById(`XPieceBtn-${pieceSize}`).style.display = "none";
+      document.getElementById(
+        `${pieceType}PieceBtn-${pieceSize}`
+      ).style.display = "none";
+
+      delete currentValue[0];
 
       possibilities.map((move) => {
         if (currentSquares[move[0]] != "") {

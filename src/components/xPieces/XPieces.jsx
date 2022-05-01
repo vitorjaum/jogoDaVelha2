@@ -6,8 +6,6 @@ import currentSquares, {
   piecesUsed,
 } from "../../constants/currentMoves";
 
-import { useEffect } from "react/cjs/react.development";
-
 const btnBig = {
   fontSize: "40px",
   backgroundColor: "transparent",
@@ -34,16 +32,16 @@ const PieceButton = ({ size, children }) => {
 
   const setPiece = () => {
     setStl({ transform: "scale(1.5)" });
-    currentValue[0] = { type: "X", size };
-    console.log(`XPieceBtn-${size}`);
+    currentValue[0] = { type: children, size };
+    console.log(`${children}PieceBtn-${size}`);
   };
 
   return (
     <>
       <button
         onClick={setPiece}
-        id={`XPieceBtn-${size}`}
-        className={`XPieceBtn`}
+        id={`${children}PieceBtn-${size}`}
+        className={`${children}PieceBtn`}
         style={stl}
       >
         {children}

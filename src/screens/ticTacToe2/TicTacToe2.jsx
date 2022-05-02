@@ -6,14 +6,14 @@ import XPieces from "../../components/xPieces/XPieces";
 
 const TicTacToe2 = () => {
   return (
-    <>
+    <div>
       <h1>Jogo da Velha 2</h1>
-      <div className={"table"}>
+      <div>
         <XPieces>X</XPieces>
         <Table />
         <XPieces>O</XPieces>
       </div>
-    </>
+    </div>
   );
 };
 

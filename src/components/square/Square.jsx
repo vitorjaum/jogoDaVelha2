@@ -18,7 +18,7 @@ const possibilities = [
   [2, 4, 6],
 ];
 
-const pieceSizeStl = [0, 12, 12, 20, 30];
+const pieceSizeStl = [0, 20, 20, 36, 57];
 
 const Square = ({ position }) => {
   const [int, setInt] = useState("");

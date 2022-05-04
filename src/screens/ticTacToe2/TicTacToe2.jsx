@@ -6,7 +6,7 @@ import XPieces from "../../components/xPieces/XPieces";
 
 const TicTacToe2 = () => {
   return (
-    <div>
+    <div className="base">
       <h1>Jogo da Velha 2</h1>
       <div>
         <XPieces>X</XPieces>

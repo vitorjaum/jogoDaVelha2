@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
-import "./XPieces.css";
+import "./PieceButtons.css";
 import { currentValue } from "../../constants/currentMoves";
 
 const PieceButton = ({ size, children }) => {
@@ -26,7 +26,7 @@ const PieceButton = ({ size, children }) => {
   );
 };
 
-const XPieces = ({ children }) => {
+const PieceButtons = ({ children }) => {
   return (
     <>
       <div className="palette">
@@ -39,4 +39,4 @@ const XPieces = ({ children }) => {
   );
 };
 
-export default XPieces;
+export default PieceButtons;

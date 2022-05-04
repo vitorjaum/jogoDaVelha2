@@ -1,17 +1,16 @@
 import React from "react";
 import "./TicTacToe2.css";
 import Table from "../../components/table/Table";
-import CirclePieces from "../../components/circlePieces/CirclePieces";
-import XPieces from "../../components/xPieces/XPieces";
+import PieceButtons from "../../components/pieceButtons/PieceButtons";
 
 const TicTacToe2 = () => {
   return (
     <div className="base">
       <h1>Jogo da Velha 2</h1>
       <div>
-        <XPieces>X</XPieces>
+        <PieceButtons>X</PieceButtons>
         <Table />
-        <XPieces>O</XPieces>
+        <PieceButtons>O</PieceButtons>
       </div>
     </div>
   );

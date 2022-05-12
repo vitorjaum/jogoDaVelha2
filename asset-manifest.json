@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/jogo_da_velha_2/static/css/main.86751386.css",
-    "main.js": "/jogo_da_velha_2/static/js/main.cbbe9fe3.js",
+    "main.js": "/jogo_da_velha_2/static/js/main.b24e8f81.js",
     "static/js/787.43e30629.chunk.js": "/jogo_da_velha_2/static/js/787.43e30629.chunk.js",
     "index.html": "/jogo_da_velha_2/index.html",
     "main.86751386.css.map": "/jogo_da_velha_2/static/css/main.86751386.css.map",
-    "main.cbbe9fe3.js.map": "/jogo_da_velha_2/static/js/main.cbbe9fe3.js.map",
+    "main.b24e8f81.js.map": "/jogo_da_velha_2/static/js/main.b24e8f81.js.map",
     "787.43e30629.chunk.js.map": "/jogo_da_velha_2/static/js/787.43e30629.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86751386.css",
-    "static/js/main.cbbe9fe3.js"
+    "static/js/main.b24e8f81.js"
   ]
 }

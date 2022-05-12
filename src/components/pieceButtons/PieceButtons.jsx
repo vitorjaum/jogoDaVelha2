@@ -1,7 +1,8 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
+
 import "./PieceButtons.css";
 import { currentValue } from "../../constants/currentMoves";
+import { useState } from "react";
 
 const PieceButton = ({ size, children }) => {
   const [stl, setStl] = useState({});

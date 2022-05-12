@@ -5,7 +5,7 @@ import currentSquares, {
   currentValue,
   piecesUsed,
 } from "../../constants/currentMoves.js";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const possibilities = [
   [0, 1, 2], // win move

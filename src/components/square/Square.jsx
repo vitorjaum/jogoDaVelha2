@@ -43,7 +43,7 @@ const Square = ({ position }) => {
       piecesUsed[pieceType][pieceSize] = pieceSize;
       document.getElementById(
         `${pieceType}PieceBtn-${pieceSize}`
-      ).style.display = "none";
+      ).style.visibility = "hidden";
 
       delete currentValue[0];
 

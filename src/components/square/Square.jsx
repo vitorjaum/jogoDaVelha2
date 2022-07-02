@@ -7,8 +7,8 @@ import currentSquares, {
 } from "../../constants/currentMoves.js";
 import { useState } from "react";
 
-const possibilities = [
-  [0, 1, 2], // win move
+const winMoves = [
+  [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
   [0, 3, 6],
@@ -18,36 +18,44 @@ const possibilities = [
   [2, 4, 6],
 ];
 
-const pieceSizeStl = [0, 20, 20, 36, 57];
+const pieceSizeStl = { small_0: 20, medium_1: 36, big_2: 57 };
 
 const Square = ({ position }) => {
   const [int, setInt] = useState("");
   const [stl, setStl] = useState({});
 
   const play = () => {
-    console.log({ currentPieces });
-    console.log(piecesUsed);
     const currValue = currentValue[0];
     const pieceType = currValue.type;
+    const pieceId = currValue.id;
     const pieceSize = currValue.size;
+    const pieceElement = document.getElementById(
+      `${pieceType}PieceBtn-${pieceId}`
+    );
+
+    console.log({ currentPieces });
+    console.log(piecesUsed);
+    console.log(piecesUsed[pieceType][0]);
+    console.log(currentPieces[position]?.size.substr(-1));
+    console.log(pieceSize);
 
     if (
       currentPieces[position] == undefined ||
-      currentPieces[position]?.size < pieceSize
+      currentPieces[position]?.size.substr(-1) < pieceSize.substr(-1)
     ) {
-      console.log({ currentValue });
       setInt(pieceType);
       setStl({ fontSize: pieceSizeStl[pieceSize] });
+
       currentPieces[position] = currValue;
       currentSquares[position] = pieceType;
-      piecesUsed[pieceType][pieceSize] = pieceSize;
-      document.getElementById(
-        `${pieceType}PieceBtn-${pieceSize}`
-      ).style.visibility = "hidden";
+      piecesUsed[pieceType][pieceSize] = pieceSize.substr(-1);
+      pieceElement.style.visibility = "hidden";
+
+      console.log({ currentValue: currentValue[0] });
 
       delete currentValue[0];
 
-      possibilities.map((move) => {
+      winMoves.map((move) => {
         if (currentSquares[move[0]] != "") {
           if (
             currentSquares[move[0]] == currentSquares[move[1]] &&

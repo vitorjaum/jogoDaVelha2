@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
+  background-color: beige;
+  border-radius: 25px;
 }
 
 /* X pieces */
@@ -10,22 +12,23 @@
   border: none;
   cursor: pointer;
 }
+
 .XPieceBtn:after {
   transform: scale(1.3);
 }
 .XPieceBtn:hover {
   transform: scale(1.3);
 }
-#XPieceBtn-4 {
+
+.big_2 {
   font-size: 57px;
 }
-#XPieceBtn-3 {
+
+.medium_1 {
   font-size: 36px;
 }
-#XPieceBtn-2 {
-  font-size: 20px;
-}
-#XPieceBtn-1 {
+
+.small_0 {
   font-size: 20px;
 }
 
@@ -40,16 +43,4 @@
 }
 .OPieceBtn:hover {
   transform: scale(1.3);
-}
-#OPieceBtn-4 {
-  font-size: 57px;
-}
-#OPieceBtn-3 {
-  font-size: 36px;
-}
-#OPieceBtn-2 {
-  font-size: 20px;
-}
-#OPieceBtn-1 {
-  font-size: 20px;
 }

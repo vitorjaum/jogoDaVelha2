@@ -18,7 +18,7 @@ const winMoves = [
   [2, 4, 6],
 ];
 
-const pieceSizeStl = { small_0: 20, medium_1: 36, big_2: 57 };
+const pieceSizeStl = { small: 20, medium: 36, big: 57 };
 
 const Square = ({ position }) => {
   const [int, setInt] = useState("");
@@ -29,6 +29,7 @@ const Square = ({ position }) => {
     const pieceType = currValue.type;
     const pieceId = currValue.id;
     const pieceSize = currValue.size;
+    const pieceValue = currValue.pieceValue;
     const pieceElement = document.getElementById(
       `${pieceType}PieceBtn-${pieceId}`
     );
@@ -36,19 +37,19 @@ const Square = ({ position }) => {
     console.log({ currentPieces });
     console.log(piecesUsed);
     console.log(piecesUsed[pieceType][0]);
-    console.log(currentPieces[position]?.size.substr(-1));
+    console.log(currentPieces[position]?.pieceValue);
     console.log(pieceSize);
 
     if (
       currentPieces[position] == undefined ||
-      currentPieces[position]?.size.substr(-1) < pieceSize.substr(-1)
+      currentPieces[position]?.pieceValue < pieceValue
     ) {
       setInt(pieceType);
       setStl({ fontSize: pieceSizeStl[pieceSize] });
 
       currentPieces[position] = currValue;
       currentSquares[position] = pieceType;
-      piecesUsed[pieceType][pieceSize] = pieceSize.substr(-1);
+      piecesUsed[pieceType][pieceSize] = pieceValue;
       pieceElement.style.visibility = "hidden";
 
       console.log({ currentValue: currentValue[0] });
